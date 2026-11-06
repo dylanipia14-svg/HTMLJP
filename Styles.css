@@ -1,0 +1,393 @@
+
+/* PASO 1: Quito los espacios que trae el navegador por defecto */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* El padding queda dentro del tamaño */
+    margin: 0;
+    padding: 0;
+}
+
+/* PASO 2: Guardo los colores y espacios para reutilizarlos */
+:root {
+    /* Colores principales de Café Macizo */
+    --cafe-900: hsl(15, 45%, 15%);
+    --cafe-700: #442D35;
+    --cafe-500: #95635E;
+    --cafe-300: #C99790;
+    --cafe-100: #F2F2F5;
+
+    /* Colores secundarios */
+    --verde: #08765D;
+    --amarillo: #D99121;
+    --texto: #191820;
+    --fondo: #F2F2F5;
+    --blanco: #FFFFFF;
+
+    /* Escala de espacios */
+    --espacio-xs: 0.5rem;
+    --espacio-s: 1rem;
+    --espacio-m: 1.5rem;
+    --espacio-l: 2rem;
+    --espacio-xl: 3rem;
+
+    /* Otros valores que reutilizo */
+    --radio: 8px;
+    --sombra: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Configuro el tamaño base de la página */
+html {
+    font-size: 100%;
+}
+
+/* Estilos generales */
+body {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--texto);
+    background-color: var(--fondo);
+    font-family: Arial, sans-serif;
+}
+
+/* PASO 3: Creo un contenedor para centrar el contenido */
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* PASO 4: Ajusto los tamaños de los títulos */
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: var(--espacio-m);
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--espacio-xs);
+}
+
+/* PASO 5: Diseño el encabezado */
+.header {
+    background-color: var(--cafe-700);
+
+    /* Uso shorthand para el borde inferior */
+    border-bottom: 4px solid var(--amarillo);
+
+    padding: 0.25rem 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio-s);
+}
+
+/* Logo y nombre de la cafetería */
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    color: var(--blanco);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Aquí dejo el tamaño para mi logo */
+.marca img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+/* Menú de navegación */
+.nav__menu {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    list-style: none;
+}
+
+/* Estilo de los enlaces */
+.nav__menu a {
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 0.25em 0.5em;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+/* Cambio de color al pasar el mouse */
+.nav__menu a:hover {
+    color: var(--amarillo);
+}
+
+/* PASO 6: Diseño la presentación principal */
+.hero {
+    /* Uso shorthand para colocar el fondo */
+    background:
+        linear-gradient(rgba(25, 61, 50, 0.88),
+                        rgba(25, 61, 50, 0.88)),
+        url("../img/fondo-cafe.jpg");
+
+    background-color: #193D32;
+    background-size: cover;
+    background-position: center;
+
+    color: var(--blanco);
+    text-align: center;
+
+    padding: 3rem 1rem;
+}
+
+/* Limito el texto para que no ocupe todo el ancho */
+.hero__contenido {
+    width: 90%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    margin-bottom: var(--espacio-s);
+}
+
+.hero p {
+    margin-bottom: var(--espacio-m);
+}
+
+/* Organizo los botones de la presentación */
+.hero__botones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+/* PASO 8: Estilos generales de los botones */
+.btn {
+    display: inline-block;
+    font-size: 1rem;
+
+    /* Uso em para que el espacio dependa de la letra */
+    padding: 0.75em 1.5em;
+
+    border-radius: 0.5em;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Botón amarillo */
+.btn--principal {
+    background-color: var(--amarillo);
+    color: var(--texto);
+    border: 2px solid var(--amarillo);
+}
+
+/* Botón transparente */
+.btn--secundario {
+    color: var(--blanco);
+    border: 2px solid var(--blanco);
+}
+
+/* Efecto de los botones */
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* PASO 7: Sección de productos */
+.productos {
+    padding: var(--espacio-xl) 0;
+    text-align: center;
+}
+
+/* Organizo las tarjetas en una fila */
+.tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+
+/* Cada tarjeta ocupa aproximadamente un tercio */
+.tarjeta {
+    width: 32%;
+    background-color: var(--blanco);
+    border: 1px solid #D9C8B8;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    text-align: left;
+
+    /* La tarjeta se mueve suavemente */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por las tarjetas */
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+/* Espacio reservado para las imágenes */
+.tarjeta__img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contenido de las tarjetas */
+.tarjeta__cuerpo {
+    padding: var(--espacio-m);
+}
+
+/* Precio del producto */
+.tarjeta strong {
+    color: var(--verde);
+    font-size: 1.1rem;
+}
+
+/* Botón de comprar */
+.btn--comprar {
+    background-color: var(--cafe-700);
+    color: var(--blanco);
+    margin-top: var(--espacio-s);
+}
+
+/* Efecto del botón comprar */
+.btn--comprar:hover {
+    background-color: var(--cafe-500);
+}
+
+/* PASO 9: Diseño de la paleta de colores */
+.paleta {
+    background-color: #F0E5D8;
+    padding: var(--espacio-xl) 0;
+    text-align: center;
+}
+
+.paleta__texto {
+    max-width: 650px;
+    margin: 0 auto var(--espacio-l);
+}
+
+/* Organizo los círculos horizontalmente */
+.colores {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* Cada color tiene su nombre y código */
+.color {
+    text-align: center;
+    width: 5rem;
+}
+
+/* Diseño de las muestras de color */
+.color__muestra {
+    width: 5rem;
+    height: 5rem;
+
+    /* Hago los círculos redondos */
+    border-radius: 50%;
+
+    margin: 0 auto var(--espacio-xs);
+
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto para los círculos de colores */
+.color__muestra:hover {
+    transform: scale(1.15) translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Colores individuales */
+.color--negro {
+    background-color: #191820;
+}
+
+.color--cafe {
+    background-color: #442D35;
+}
+
+.color--marron {
+    background-color: #95635E;
+}
+
+.color--rosa {
+    background-color: #C99790;
+}
+
+.color--blanco {
+    background-color: #F2F2F5;
+    border: 1px solid #CCCCCC;
+}
+
+.color--verde {
+    background-color: #08765D;
+}
+
+.color--amarillo {
+    background-color: #D99121;
+}
+
+/* Nombre de cada color */
+.color p {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+}
+
+/* Código del color */
+.color small {
+    font-size: 0.7rem;
+}
+
+/* PASO 10: Diseño del pie de página */
+.footer {
+    background-color: var(--cafe-900);
+    color: var(--blanco);
+    text-align: center;
+
+    /* Uso shorthand con dos valores */
+    padding: 1.5rem 5%;
+}
+
+/* Ajusto el diseño para pantallas pequeñas */
+@media (max-width: 48em) {
+
+    /* Organizo el logo y menú verticalmente */
+    .nav {
+        flex-direction: column;
+        padding: 0.5rem 0;
+    }
+
+    /* Las tarjetas ocupan todo el ancho */
+    .tarjeta {
+        width: 100%;
+    }
+
+    /* Ajusto el tamaño del título */
+    h1 {
+        font-size: 2rem;
+    }
+
+    /* Ajusto el tamaño de los círculos */
+    .color__muestra {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+}

@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Esto permite que la página se adapte al celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Café Macizo</title>
+
+    <!-- Enlazo el archivo donde tengo todos mis estilos -->
+    <link rel="stylesheet" href="Styles.css">
+</head>
+
+<body>
+
+    <!-- Encabezado donde va el logo y el menú -->
+    <header class="header">
+
+        <nav class="nav contenedor">
+
+            <!-- Aquí agrego el logo de mi cafetería -->
+            <div class="marca">
+                <img src="../Imagenes/Cafe Páez.png" alt="Logo Café Macizo">
+                <span>Café Macizo</span>
+            </div>
+
+            <!-- Enlaces para navegar por la página -->
+            <ul class="nav__menu">
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#paleta">Paleta</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- Presentación principal del café -->
+    <main>
+
+        <section class="hero">
+
+            <div class="hero__contenido">
+
+                <h1>Café de altura, cultivado en el Macizo Colombiano</h1>
+
+                <p>
+                    Granos seleccionados a mano por familias caficultoras
+                    del Cauca. Tradición artesanal y sabor con notas
+                    de panela y frutas rojas.
+                </p>
+
+                <!-- Botones para conocer los productos -->
+                <div class="hero__botones">
+
+                    <a href="#productos" class="btn btn--principal">
+                        Ver productos
+                    </a>
+
+                    <a href="#paleta" class="btn btn--secundario">
+                        Conócenos
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Sección de los productos -->
+        <section class="productos" id="productos">
+
+            <div class="contenedor">
+
+                <h2>Nuestros productos</h2>
+
+                <div class="tarjetas">
+
+                    <!-- Primera tarjeta -->
+                    <article class="tarjeta">
+
+                        <!-- Aquí agrego la imagen del café en grano -->
+                        <img class="tarjeta__img"
+                             src="../Imagenes/1.png"
+                             alt="Café en grano">
+
+                        <div class="tarjeta__cuerpo">
+
+                            <h3>Café en grano</h3>
+
+                            <p>
+                                Bolsa de 500 g. Ideal para moler en casa.
+                            </p>
+
+                            <strong>$ 22.000</strong>
+
+                            <br>
+
+                            <a href="#" class="btn btn--comprar">
+                                Comprar
+                            </a>
+
+                        </div>
+
+                    </article>
+
+<!-- Segunda tarjeta -->
+         <article class="tarjeta">
+
+ <!-- Aquí agrego la imagen del café molido -->
+                <img class="tarjeta__img"
+                             src="../Imagenes/2.png"
+                             alt="Café molido">
+
+       <div class="tarjeta__cuerpo">
+
+                 <h3>Café molido</h3>
+
+                 <p>
+  Selección media para preparar café.
+                 </p>
+
+                 <strong>$ 28.000</strong>
+
+                     <br>
+
+              <a href="#" class="btn btn--comprar">
+                     Comprar
+                     </a>
+
+                 </div>
+
+        </article>
+
+                    <!-- Tercera tarjeta -->
+      <article class="tarjeta">
+
+                        <!-- Aquí agrego la imagen de la taza -->
+             <img class="tarjeta__img"
+                             src="../Imagenes/3.png"
+                             alt="Kit de café">
+
+            <div class="tarjeta__cuerpo">
+
+                            <h3>Kit de café</h3>
+
+                    <p>
+                                Una experiencia de café para compartir.
+                        </p>
+
+                     <strong>$ 45.000</strong>
+
+                            <br>
+
+                 <a href="#" class="btn btn--comprar">
+                                Comprar
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Aquí muestro los colores que utilicé -->
+  <section class="paleta" id="paleta">
+
+            <div class="contenedor">
+
+                <h2>Nuestra paleta de colores</h2>
+
+                <p class="paleta__texto">
+                    Estos son los colores que escogí para representar
+                    nuestra marca y darle un estilo natural.
+                </p>
+
+                <div class="colores">
+
+                    <div class="color">
+                        <div class="color__muestra color--negro"></div>
+                        <p>Negro 90</p>
+                        <small>#191820</small>
+                    </div>
+
+                    <div class="color">
+                        <div class="color__muestra color--cafe"></div>
+                        <p>Brown 700</p>
+                        <small>#442D35</small>
+                    </div>
+
+                    <div class="color">
+                        <div class="color__muestra color--marron"></div>
+                        <p>Marrón 500</p>
+                        <small>#95635E</small>
+                    </div>
+
+                    <div class="color">
+                        <div class="color__muestra color--rosa"></div>
+                        <p>Rosado 300</p>
+                        <small>#C99790</small>
+                    </div>
+
+                    <div class="color">
+                        <div class="color__muestra color--blanco"></div>
+                        <p>Blanco 50</p>
+                        <small>#F2F2F5</small>
+                    </div>
+           <div class="color">
+                   <div class="color__muestra color--verde"></div>
+                        <p>Verde 600</p>
+                        <small>#08765D</small>
+                    </div>
+
+  <div class="color">
+                        <div class="color__muestra color--amarillo"></div>
+                        <p>Amarillo 500</p>
+                        <small>#D99121</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer" id="contacto">
+
+        <p>&copy; 2026 Café Macizo - Café colombiano</p>
+
+    </footer>
+
+</body>
+
+</html>
